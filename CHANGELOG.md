@@ -1,3 +1,6 @@
+1.32.04: (20210309)
+    - Changed paths to current client situation.
+
 1.32.03: (20200131)
     - Fix for issue with Vectorworks naming drawer box fronts differently, resulting in invalid drawing detection.
 
