@@ -1,0 +1,45 @@
+Hier de aanpassingen aan de postprocessor bijhouden zodat deze na een update kan herzien worden.
+
+Belangrijk: Kijk eerst na of het bestand interiorcad.zip wel degelijk veranderd is adhv de datum in verkenner!
+
+# MS20190401: (Vectorworks/Interiorcad 2019)
+
+    # File:   C:\Program Files\Vectorworks 2019 NL\interiorcad\Python\interiorcad.zip\interiorcad\ncexport\woodwop.py in function: createWorkpieceDefinition
+
+        Original:  'FNY="{}"'.format(self.formatAsCoordinate(data=surface.getAdditionY())), #(origineel)
+        Modified:  'FNY="IF _BHX THEN 0 ELSE {}"'.format(self.formatAsCoordinate(data=surface.getAdditionY())), #MS20190401
+
+        *** Voorlopig deze gebruiken: - 'FNY="IF _BHX THEN 0 ELSE 2.5"', #MS20190827 - omdat we, tot het probleem met aftrekken dikte bandjes ofwel opgelost is in VW, ofwel
+            gecorrigeerd wordt met BarCon,  in VW werken met een overmaat van 7mm, maar slechts 2.5 aan ASX&ASY willen afnemen.
+            Ook voor FNX: 'FNX="2.5"', #MS20190827
+
+        Beschrijving: "Offset Bewerkt Deel Y" moet voor _BHX ---STEEDS--- 0 zijn omdat deze niet kan calibreren aan kant ASY. Manueel
+                        aanpassen per programma is omslachtig en foutgevoelig. Daarom is dit nu rechtstreeks in de postprocessor aangepast.
+
+        Meer info:  Z:\Tekeningen\Vectorworks (gedeelde map)\Screenshots\MS20190401_001_Postprocessor_FNY.png
+
+
+
+    # File:   C:\Program Files\Vectorworks 2019 NL\interiorcad\Python\interiorcad.zip\interiorcad\ncexport\woodwop.py in function: createHeader
+        Original: 'OP="{}"'.format(self.OPTIMIZING_MODE), #origineel
+        Modified: 'OP="IF _BHX THEN 31 ELSE 1"', #MS20190827
+
+        Beschrijving: Stelt boormodus 31 in voor _BHX en 1 voor _BMG, waardoor er rekening wordt gehouden met NC_STOP bij optimalisatie.
+            Opgelet - Na openen en terug opslaan met woodWOP 7 en hoger wordt vervangen door 1. Deze programma's werken dan mogelijk ook niet Meer
+                correct op _BHX !!!
+
+
+    # File:   C:\Program Files\Vectorworks 2019 NL\interiorcad\Python\interiorcad.zip\interiorcad\ncexport\woodwop.py in function: __createCommonContourBlock
+        Original: 'ZA="{z}"'.format(z='@0' if 'forceDepth' not in keywords else self.formatAsCoordinate(data=keywords['forceDepth'])), #origineel
+        Modified: 'ZA="{z}"'.format(z='-2' if 'forceDepth' not in keywords else self.formatAsCoordinate(data=keywords['forceDepth'])), #MS20190906
+
+        Beschrijving: Stelt z-waarde -2 in voor contourfrezingen met niet-geforceerde (blijkbaar alles >= DZ) diepte.
+                        Blijkbaar komen alle frezingen door als @0 (en nu dus -2), dus opletten met contouren van specifieke diepte!!! (best aangeven op tekening)
+
+
+    # File:   C:\Program Files\Vectorworks 2019 NL\interiorcad\Python\interiorcad.zip\interiorcad\ncexport\woodwop.py in function: createTurnOver
+        Original: self.createNCStop(comment=comment, releaseVacuum=True, additionX=surface.getAdditionXMirrored(), additionY=surface.getAdditionY(), parkPositionXString=parkPositionXString, **keywords), #(origineel)
+        Modified: self.createNCStop(comment=comment, releaseVacuum=True, additionX=0, additionY=0, parkPositionXString=parkPositionXString, **keywords), #MS20191015.
+
+        Beschrijving: Nieuwe offsetmaat in X en Y moet altijd 0 zijn!
+#
