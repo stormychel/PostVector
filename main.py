@@ -1,4 +1,6 @@
-# PostVector - Compatibility for Vectorworks + InteriorCAD + woodWOP + WoodScan + HHOS - (c)2020 Michel Storms (stormychel@me.com)
+# Created by Michel Storms - michelstorms@icloud.com
+# PostVector - Compatibility for Vectorworks + InteriorCAD + woodWOP + WoodScan + HHOS
+
 version="1.32.04" # (Major, Minor, Patch)
 date="20210309" # (YYYYMMDD)
 

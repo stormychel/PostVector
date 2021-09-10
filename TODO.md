@@ -1,3 +1,5 @@
+//  Created by Michel Storms - michelstorms@icloud.com
+
 - Projectnaam: eerste 5 LOWERCASE letters van bestandsnaam. Indien deze al bestaat beginnen met laatste positie te nummeren
     bvb: CallensKeuken wordt calle - Indien zelfde naam voorkomt wordt deze dan call0, call1, ... tot callZ (36 combinaties mogelijk)
     Wel bekijken of Upper/Lowercase invloed heeft bij scanner?

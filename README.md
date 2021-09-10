@@ -1,3 +1,5 @@
+//  Created by Michel Storms - michelstorms@icloud.com
+
 Richtlijnen:
 - Projecten moeten een code hebben, opgebouwd uit JJ (2 laatste cijfers jaartal) + volgnummer.
     19001 is dus project nummer 001 van 2019
