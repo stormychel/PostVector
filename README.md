@@ -1,5 +1,13 @@
 //  Created by Michel Storms - michelstorms@icloud.com
 
+This is a postprocessor that handles translation between VectorWorks + InteriorCAD + HHOS + woodWOP files.
+
+It is provided as-is, under the CC BY-SA 4.0 license and usage is at your own responsibility!
+
+Many of the descriptions are in Dutch, if you would like a translation please contact me and I will be happy to help out!
+
+---
+
 Richtlijnen:
 - Projecten moeten een code hebben, opgebouwd uit JJ (2 laatste cijfers jaartal) + volgnummer.
     19001 is dus project nummer 001 van 2019
