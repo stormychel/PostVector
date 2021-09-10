@@ -6,6 +6,8 @@ It is provided as-is, under the CC BY-SA 4.0 license and usage is at your own re
 
 Many of the descriptions are in Dutch, if you would like a translation please contact me and I will be happy to help out!
 
+If you want custom work done, based on these files, feel free to request a quote at: michelstorms@icloud.com
+
 ---
 
 Richtlijnen:
