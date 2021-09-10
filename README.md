@@ -1,5 +1,3 @@
-*** VERDERE ONTWIKKELING VIA PRIVATE GIT REPO ( https://github.com/NDJ-Michel/PostVector/edit/master/README.md ) ***
-
 Richtlijnen:
 - Projecten moeten een code hebben, opgebouwd uit JJ (2 laatste cijfers jaartal) + volgnummer.
     19001 is dus project nummer 001 van 2019
